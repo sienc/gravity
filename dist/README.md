@@ -1,2 +1,2 @@
-# gravity
+# Gravity
 A game with gravity

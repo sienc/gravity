@@ -1,0 +1,13 @@
+{
+"companyName": "TakoStudio",
+"productName": "Gravity",
+"dataUrl": "gravity.data.unityweb",
+"asmCodeUrl": "gravity.asm.code.unityweb",
+"asmMemoryUrl": "gravity.asm.memory.unityweb",
+"asmFrameworkUrl": "gravity.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
