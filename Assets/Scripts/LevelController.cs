@@ -1,37 +1,27 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class LevelController : MonoBehaviour
 {
-    public GameObject cube;
+    public UnityEvent onLevelComplete;
+    public UnityEvent onLevelFail;
 
-    public void Win()
+    public void Complete()
     {
-        Debug.Log("Win!");
-        cube.gameObject.SetActive(false);
-		//ShowMessage("YOU WIN!");
+        Debug.Log("Level completed");
+
+        if (onLevelComplete != null)
+            onLevelComplete.Invoke();
     }
 
-    public void Lose()
+    public void Fail()
     {
-        Debug.Log("Lose!");
+        Debug.Log("Level failed");
 
-        cube.gameObject.SetActive(false);
-		//ShowMessage("Your cube is devoured by the black hole.\nTry again.");
+        if (onLevelFail != null)
+            onLevelFail.Invoke();
     }
-
-    public void Reset()
-    {
-        cube.transform.position = Vector3.zero;
-		cube.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        cube.gameObject.SetActive(true);
-    }
-
-    // void ShowMessage(string text)
-    // {
-    //     message.text = text;
-    //     message.gameObject.SetActive(true);
-    // }
 }
